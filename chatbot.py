@@ -28,6 +28,12 @@ class Chatbot:
 
         self.head_agent.setup_sub_agents()
 
+    def _is_greeting(self, text: str) -> bool:
+        """简单问候语检测，与图中 Greeting 行为一致"""
+        t = text.strip().lower().rstrip(".!?")
+        greetings = ("hi", "hello", "hey", "good morning", "good afternoon", "good evening", "howdy")
+        return t in greetings or t in ("hi!", "hello!")
+
     def chat(self, user_input: str) -> str:
 
         user_input = user_input.strip()
@@ -35,13 +41,22 @@ class Chatbot:
         if not user_input:
             return "Please enter a valid question."
 
-        # 1️⃣ Obnoxious check
+        # 0️⃣ Greeting → 固定回复（与图中一致）
+        if self._is_greeting(user_input):
+            reply = "Hi! How can I help you today?"
+            self.head_agent.history.append(f"User: {user_input}")
+            self.head_agent.history.append(f"Assistant: {reply}")
+            return reply
+
+        # 1️⃣ Offensive → Blocked（与图中一致）
         is_obnoxious = self.head_agent.obnoxious_agent.check_query(user_input)
-
         if is_obnoxious:
-            return "Your query is inappropriate. Please ask a respectful question."
+            reply = "Your query is inappropriate. Please ask a respectful question."
+            self.head_agent.history.append(f"User: {user_input}")
+            self.head_agent.history.append(f"Assistant: {reply}")
+            return reply
 
-        # 2️⃣ Rewrite query
+        # 2️⃣ Rewrite query（含 Follow-up 的 context rewrite）
         rewritten_query = self.head_agent.context_rewriter.rephrase(
             self.head_agent.history,
             user_input
@@ -69,10 +84,11 @@ Retrieved Documents:
 """
 
         relevance = self.head_agent.relevant_agent.get_relevance(relevance_input)
+        is_relevant = relevance.strip().lower().startswith("yes")
 
-
-        if not docs.get("matches"):
-            response = "I don't know the answer based on the available documents."
+        # 3️⃣ Irrelevant / 无检索结果 → 与图中一致
+        if not docs.get("matches") or not is_relevant:
+            response = "I don't know."
         else:
             response = self.head_agent.answering_agent.generate_response(
                 rewritten_query,

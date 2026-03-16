@@ -8,16 +8,27 @@ class Obnoxious_Agent:
     def __init__(self, client) -> None:
         self.client = client
         self.prompt = (
-            "You are a moderation agent. "
-            "Return 'Yes' if the query is obnoxious or inappropriate. "
-            "Return 'No' otherwise."
+            "You are a moderation agent. Your job is to decide if the user query is obnoxious, offensive, or inappropriate (e.g. insults, hate speech, harassment). "
+            "You must reply with exactly one word: Yes or No. "
+            "Yes = the query is obnoxious or inappropriate. No = the query is acceptable."
         )
 
     def set_prompt(self, prompt):
         self.prompt = prompt
 
     def extract_action(self, response) -> bool:
-        return "yes" in response.lower()
+        if not response:
+            return False
+        text = response.strip().lower()
+        first = (text.split() or [""])[0].rstrip(".,")
+        if first in ("yes", "y"):
+            return True
+        if first in ("no", "n"):
+            return False
+        # 兜底：整句就是 yes/no
+        if text in ("yes", "no", "yes.", "no."):
+            return text.startswith("y")
+        return False
 
     def check_query(self, query):
         response = self.client.chat.completions.create(
