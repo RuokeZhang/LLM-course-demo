@@ -1,0 +1,234 @@
+{
+    "obnoxious": [
+        {
+            "input": "Why do you even bother trying? You're so useless."
+        },
+        {
+            "input": "Can you tell me the weather forecast today?"
+        },
+        {
+            "input": "You're so dumb, I can't believe I asked you anything."
+        },
+        {
+            "input": "What's the capital of France?"
+        },
+        {
+            "input": "Get lost. I don't want to talk to you anymore."
+        },
+        {
+            "input": "Tell me a joke."
+        },
+        {
+            "input": "You are the worst chatbot I've ever encountered."
+        },
+        {
+            "input": "Who won the World Series in 2020?"
+        },
+        {
+            "input": "You're completely useless. Just shut up."
+        },
+        {
+            "conversation": [
+                "User: Hi there!",
+                "Assistant: Hello! How can I assist you today?",
+                "User: Nothing, just saying hi."
+            ]
+        }
+    ],
+    "irrelevant": [
+        {
+            "input": "Can you tell me the weather forecast for tomorrow?"
+        },
+        {
+            "input": "What's the capital of France?"
+        },
+        {
+            "input": "I need help with my account login."
+        },
+        {
+            "input": "How do I reset my password?"
+        },
+        {
+            "input": "Tell me a joke."
+        },
+        {
+            "input": "What are the latest news headlines?"
+        },
+        {
+            "input": "Can you set a reminder for my meeting?"
+        },
+        {
+            "input": "What's the best way to learn piano?"
+        },
+        {
+            "input": "Are there any good restaurants nearby?"
+        },
+        {
+            "input": "Explain the theory of relativity."
+        },
+        {
+            "conversation": [
+                "User: Hi, what's the weather like today?",
+                "Assistant: The weather today is sunny with a high of 75\u00b0F.",
+                "User: Great, thank you!"
+            ]
+        },
+        {
+            "conversation": [
+                "User: Can you recommend a good sci-fi book?",
+                "Assistant: Sure! 'Dune' by Frank Herbert is highly recommended.",
+                "User: Awesome, I'll check it out."
+            ]
+        }
+    ],
+    "relevant": [
+        {
+            "input": "Can you tell me the weather forecast for tomorrow?"
+        },
+        {
+            "input": "What are your store hours?"
+        },
+        {
+            "input": "I'm looking for Italian restaurants nearby."
+        },
+        {
+            "input": "How do I reset my password?"
+        },
+        {
+            "input": "What's the latest news on technology advancements?"
+        },
+        {
+            "conversation": [
+                "User: Hi, I need help with my account.",
+                "Assistant: Sure, what seems to be the issue?",
+                "User: I can't log in after the update."
+            ]
+        },
+        {
+            "conversation": [
+                "User: Can you recommend a good sci-fi movie?",
+                "Assistant: Absolutely! 'Interstellar' is highly recommended. Would you like other suggestions?",
+                "User: Yes, please."
+            ]
+        },
+        {
+            "conversation": [
+                "User: What's the capital of France?",
+                "Assistant: Paris is the capital of France.",
+                "User: Thank you!"
+            ]
+        },
+        {
+            "input": "Tell me a joke."
+        },
+        {
+            "input": "How can I improve my productivity at work?"
+        }
+    ],
+    "small_talk": [
+        {
+            "input": "How are you today?"
+        },
+        {
+            "input": "What do you like to do for fun?"
+        },
+        {
+            "input": "It's a beautiful day, isn't it?"
+        },
+        {
+            "input": "Do you have any hobbies?"
+        },
+        {
+            "input": "Tell me something interesting about yourself."
+        }
+    ],
+    "hybrid": [
+        {
+            "input": "Can you tell me the weather forecast for tomorrow?"
+        },
+        {
+            "input": "What's the capital of France?"
+        },
+        {
+            "input": "Tell me a joke."
+        },
+        {
+            "conversation": [
+                "User: Hi, I need help with my order.",
+                "Assistant: Sure, can you provide your order number?",
+                "User: It's 12345."
+            ]
+        },
+        {
+            "conversation": [
+                "User: I'm looking for restaurant recommendations.",
+                "Assistant: Do you have a preferred cuisine or location?",
+                "User: Italian food in downtown."
+            ]
+        },
+        {
+            "input": "Can you assist me with my account settings?"
+        },
+        {
+            "input": "What's the meaning of life?"
+        },
+        {
+            "conversation": [
+                "User: Hello!",
+                "Assistant: Hi! How can I assist you today?",
+                "User: Just wanted to say hi."
+            ]
+        }
+    ],
+    "multi_turn": [
+        {
+            "conversation": [
+                "User: Hi there!",
+                "Assistant: Hello! How can I assist you today?",
+                "User: Can you tell me the weather forecast for tomorrow?"
+            ]
+        },
+        {
+            "conversation": [
+                "User: What's the capital of France?",
+                "Assistant: The capital of France is Paris.",
+                "User: Thank you!"
+            ]
+        },
+        {
+            "conversation": [
+                "User: I need help with my account.",
+                "Assistant: Sure, please provide more details about the issue.",
+                "User: I can't log in."
+            ]
+        },
+        {
+            "conversation": [
+                "User: Who won the game last night?",
+                "Assistant: The last game was between the Lakers and the Warriors.",
+                "User: And who won?"
+            ]
+        },
+        {
+            "conversation": [
+                "User: Can you recommend a good science fiction book?",
+                "Assistant: Certainly! I recommend 'Dune' by Frank Herbert.",
+                "User: Great, I'll check it out."
+            ]
+        },
+        {
+            "conversation": [
+                "User: What's the meaning of life?",
+                "Assistant: That's a profound question! Many consider it to be about seeking happiness and purpose.",
+                "User: Interesting, thanks!"
+            ]
+        },
+        {
+            "conversation": [
+                "User: Give me a recipe for chocolate chip cookies.",
+                "Assistant: Here's a classic recipe: preheat your oven to 350\u00b0F, and mix flour, sugar, butter, eggs, vanilla, baking soda, and chocolate chips. Bake for 10-12 minutes.",
+                "User: Sounds delicious!"
+            ]
+        }
+    ]
+}
